@@ -27,7 +27,10 @@
                     			<td>{{ $vehicle->owner->first_name . ' ' . $vehicle->owner->last_name }}</td>
                     			<td>{{ $vehicle->manufacturer . ' ' . $vehicle->type }}</td>
                     			<td>{{ $vehicle->date_registered }}</td>
+
                                 <td><a href="{{ route('vehicles.show', ['id' => $vehicle->id]) }}">View</a></td>
+                                <td><a href="{{ route('vehicles.edit', ['id' => $vehicle->id]) }}">Edit</a></td>
+                                <td><a href="{{ route('vehicles.delete', ['id' => $vehicle->id]) }}">Delete</a></td>
                     		</tr>
 
                 		@endforeach

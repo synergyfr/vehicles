@@ -22,4 +22,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/vehicles', 'VehicleController@index')->name('vehicles.index');
 Route::get('/vehicles/create', 'VehicleController@create')->name('vehicles.create');
 Route::post('/vehicles/store', 'VehicleController@store')->name('vehicles.store');
-Route::get('/vehicles/{vehicle}', 'VehicleController@show')->name('vehicles.show');
+Route::get('/vehicles/edit/{id}', 'VehicleController@edit')->name('vehicles.edit');
+Route::put('/vehicles/update/{id}', 'VehicleController@update')->name('vehicles.update');
+Route::get('/vehicles/{id}', 'VehicleController@show')->name('vehicles.show');
+Route::get('/vehicles/delete/{id}', 'VehicleController@delete')->name('vehicles.delete');

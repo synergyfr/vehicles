@@ -19,7 +19,7 @@ class CreateVehicles extends Migration
             $table->string('type');
             $table->string('year', 10);
             $table->string('colour');
-            $table->string('mileage_units');
+            $table->string('mileage_units, 2');
             $table->string('mileage');
             $table->date('date_registered')
             $table->timestamps();
