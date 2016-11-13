@@ -19,4 +19,11 @@ table tbody tr td:last-child {
   .modal-delete .modal-dialog {
     width: 400px; } }
 
+.p-t-10 {
+  padding-top: 10px; }
+
+.required-text {
+  display: block;
+  margin-bottom: 15px; }
+
 /*# sourceMappingURL=app.css.map */

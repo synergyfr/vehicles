@@ -10,6 +10,8 @@
 
                 <div class="panel-body">
                     
+                    <h4>Owner Information</h4>
+
                 	<div class="owner-info">
                 		<p>
                 			<strong>First & Last Name</strong> : {{ $owner->first_name }} {{ $owner->last_name }}<br />
@@ -17,6 +19,8 @@
                 			<strong>Contact Number</strong> : {{ $owner->contact_number }}
                 		</p>
                 	</div>
+
+                    <h4 class="p-t-10">Vehicle Information</h4>
 
                 	<div class="vehicle-info">
                 		<p>
