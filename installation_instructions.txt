@@ -1,0 +1,26 @@
+Instructions on configuring, deploying & running the application
+
+
+
+1. git clone https://github.com/synergyfr/vehicles.git or download files from https://github.com/synergyfr/vehicles
+
+2. Configure the .env.example file with at least the database configuration and save as .env
+
+3. Make sure composer and npm is installed on the server
+
+4. run composer install to get the vendor files and npm install to get the node modules
+
+4. Run php artisan key:generate that will add an application key to the .env file
+
+5. sudo chmod -R 770 storage bootstrap/cache to enable writing by the server
+
+6. if necessary, run sudo chown -R www-data:www-data vendor public storage
+
+7. Run php artisan migrate to get all the tables up, make sure you have created and specified the database in the .env file
+
+8. Run php artisan db:seed --class='' where class is the database/seeds file names or class names, for example OwnerSeeder, 
+	the current project only requires VehicleSeeder, UserSeeder and OwnerSeeder
+
+9. Run the following : php artisan route:clear && php artisan view:clear && php artisan cache:clear && php artisan config:clear && php artisan clear-compiled && php artisan config:cache && php artisan route:cache
+
+Make sure to sudo if it is required.
