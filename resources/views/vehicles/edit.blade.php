@@ -39,6 +39,10 @@
                     	{!! Form::close() !!}
 
                     </div>
+
+                    <div class="panel-footer">
+                        <a href="{{ route('vehicles.index') }}" class="btn">Back to Vehicles</a>
+                    </div>
                 </div>
             </div>
         </div>

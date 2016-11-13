@@ -1,0 +1,22 @@
+table tbody tr td a {
+  margin-right: 5px; }
+
+table tbody tr td:last-child {
+  text-align: right; }
+
+@media (max-width: 768px) {
+  table thead {
+    display: none; } }
+
+@media (max-width: 768px) {
+  table tbody tr td {
+    width: 100%;
+    display: block; }
+    table tbody tr td:last-child {
+      text-align: left; } }
+
+@media (min-width: 768px) {
+  .modal-delete .modal-dialog {
+    width: 400px; } }
+
+/*# sourceMappingURL=app.css.map */

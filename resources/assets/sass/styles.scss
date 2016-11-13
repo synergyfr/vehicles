@@ -1,0 +1,35 @@
+table { 
+	tbody tr td {
+		a {
+			margin-right: 5px;
+		}
+		&:last-child {
+			text-align: right;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	table thead { 
+		display: none; 
+	}
+	
+}
+
+@media (max-width: 768px) { 
+	table tbody tr td {
+		width: 100%;
+		display: block;
+		&:last-child {
+			text-align: left;
+		}
+	}
+}
+
+.modal-delete {
+	@media (min-width: 768px) {
+		.modal-dialog {
+			width: 400px;
+		}
+	}
+}

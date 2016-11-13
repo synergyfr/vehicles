@@ -27,39 +27,41 @@
         <div class="col-md-10 col-md-offset-1">
             <p>Welcome {{ Auth::user()->name }}</p>
             <div class="panel panel-default">
+            
                 <div class="panel-heading">
                     Previously Registered Vehicles <a class="pull-right" href="{{ route('vehicles.create') }}">New</a>
                 </div>
 
                 <div class="panel-body">
                     
-                <table class="table table-striped">
-                	<thead>
-                		<th>Owner Name</th>
-                		<th>Vehicle Manufacturer &amp; Type</th>
-                		<th>Date Registered</th>
-                        <th>&nbsp;</th>
-                	</thead>
-                	<tbody>
-                		@foreach ($vehicles as $vehicle)
+                    <table class="table table-striped">
+                    	<thead>
+                    		<th>Owner Name</th>
+                    		<th>Vehicle Manufacturer &amp; Type</th>
+                    		<th>Date Registered</th>
+                            <th>&nbsp;</th>
+                    	</thead>
+                    	<tbody>
+                    		@foreach ($vehicles as $vehicle)
 
-                            <?php $date_registered = date('d/m/Y', strtotime($vehicle->date_registered)); ?>
+                                <?php $date_registered = date('d/m/Y', strtotime($vehicle->date_registered)); ?>
 
-                    		<tr>
-                    			<td>{{ $vehicle->owner->first_name . ' ' . $vehicle->owner->last_name }}</td>
-                    			<td>{{ $vehicle->manufacturer . ' ' . $vehicle->type }}</td>
-                    			<td>{{ $date_registered }}</td>
+                        		<tr>
+                        			<td>{{ $vehicle->owner->first_name . ' ' . $vehicle->owner->last_name }}</td>
+                        			<td>{{ $vehicle->manufacturer . ' ' . $vehicle->type }}</td>
+                        			<td>{{ $date_registered }}</td>
 
-                                <td><a href="{{ route('vehicles.show', ['id' => $vehicle->id]) }}">View</a></td>
-                                <td><a href="{{ route('vehicles.edit', ['id' => $vehicle->id]) }}">Edit</a></td>
-                                <td>
-                                    <button class="btn btn-success confirm-delete" data-toggle="modal" data-target="#modal-delete" data-id="{{ $vehicle->id }}">Delete</button> 
-                                </td>
-                    		</tr>
+                                    <td>
+                                        <a href="{{ route('vehicles.show', ['id' => $vehicle->id]) }}" class="btn btn-success">View</a>
+                                        <a href="{{ route('vehicles.edit', ['id' => $vehicle->id]) }}" class="btn btn-success">Edit</a>
 
-                		@endforeach
-                	</tbody>
-                </table>
+                                        <button class="btn btn-danger confirm-delete" data-toggle="modal" data-target="#modal-delete" data-id="{{ $vehicle->id }}">Delete</button>
+                                    </td>
+                        		</tr>
+
+                    		@endforeach
+                    	</tbody>
+                    </table>
 
                 </div>
             </div>
