@@ -22,7 +22,10 @@ class CreateVehicles extends Migration
             $table->string('mileage_units, 2');
             $table->string('mileage');
             $table->date('date_registered')
+            
             $table->timestamps();
+            $table->softDeletes();
+            
         });
     }
 

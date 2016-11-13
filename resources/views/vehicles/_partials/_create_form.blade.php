@@ -62,9 +62,13 @@
 	{!! $errors->first('mileage', '<small class="text-danger">:message</small>') !!}
 </div>
 
+<?php
+	$date_registered = (isset($vehicle)) ? date('d/m/Y', strtotime($vehicle->date_registered)) : null;
+?>
+
 <div class="form-group <?php if($errors->has('date_registered')) echo 'has-error'; ?>">
 	{{ Form::label('date_registered', 'Date Registered') }}
 	<span class="help">e.g. 22/10/2004</span>
-	{{ Form::text('date_registered', null, [ 'class' => 'form-control', 'placeholder' => 'DD/MM/YYYY'] ) }}
+	{{ Form::text('date_registered', $date_registered, [ 'class' => 'form-control', 'placeholder' => 'DD/MM/YYYY'] ) }}
 	{!! $errors->first('date_registered', '<small class="text-danger">:message</small>') !!}
 </div>

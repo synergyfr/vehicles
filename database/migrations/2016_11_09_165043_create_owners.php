@@ -18,7 +18,10 @@ class CreateOwners extends Migration
             $table->string('last_name');
              $table->string('email')->unique();
             $table->string('contact_number'); // in case user decides to use + and ( )
+            
             $table->timestamps();
+            $table->softDeletes();
+            
         });
     }
 

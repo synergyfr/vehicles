@@ -25,7 +25,9 @@
                 			<strong>Year</strong> : {{ $vehicle->year }}<br />
                 			<strong>Colour</strong> : {{ $vehicle->colour }}<br />
                 			<strong>Mileage</strong> : {{ $vehicle->mileage }} {{ $vehicle->mileage_units }}<br />
-                			<strong>Date Registered</strong> : {{ $vehicle->date_registered }}
+
+                            <?php $date_registered = date('d/m/Y', strtotime($vehicle->date_registered)); ?>
+                			<strong>Date Registered</strong> : {{ $date_registered }}
                 		</p>
                 	</div>
 

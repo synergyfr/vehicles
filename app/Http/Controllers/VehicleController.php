@@ -182,6 +182,16 @@ class VehicleController extends Controller
     }
 
     public function delete ($id) {
+      
+      // vehicle id
+      // wanted to capture the owner's record, so I used delete instead of destroy 
+      $vehicle  = Vehicle::find($id);
+      $owner    = Owner::find($vehicle->owners_id);
+
+      $vehicle->delete();
+      $owner->delete();
+
+      return redirect()->route('vehicles.index')->withMessage('Vehicle record successfully removed');
 
     }
 }
